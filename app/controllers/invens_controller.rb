@@ -16,7 +16,7 @@ class InvensController < ApplicationController
     @total_by_location =  @collections.group(:location).sum(:amount).to_a
     
     @donations = @collections.group(:collection_type, :name).sum(:amount).to_a
-    @total_donations = @collections.where("collection_type=?", 2).sum(:amount)
+    # @total_donations = @collections.where("collection_type=?", 2).sum(:amount)
     
     @location_count = Location.count
     @family_count = Family.count

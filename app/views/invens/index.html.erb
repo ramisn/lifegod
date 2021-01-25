@@ -28,9 +28,9 @@
             </ul> -->
             <p>
             <h1 class="btn btn-outline btn-primary" style="margin-left: 25px;font-size: 20px">Collections - <%= @total_collections %></h1>
-            <h1 class="btn btn-outline btn-info" style="margin-left: 75px;font-size: 20px">Donations - <%= @total_donations %></h1>
+            <h1 class="btn btn-outline btn-info" style="margin-left: 75px;font-size: 20px">Donations - <%= @donations %></h1>
             <h1 class="btn btn-outline btn-danger" style="margin-left: 60px;font-size: 20px">Expenses - <%= @total_expenses + @total_const_expenses %></h1>
-            <h1 class="btn btn-outline btn-success" style="margin-left: 90px;font-size: 20px">At Hand(Balance) : <%= (@total_collections + @total_donations) - (@total_expenses + @total_const_expenses)  %></h1>
+            <h1 class="btn btn-outline btn-success" style="margin-left: 90px;font-size: 20px">At Hand(Balance) : <%= (@total_collections + @donations) - (@total_expenses + @total_const_expenses)  %></h1>
             </p>
             <!-- Tab panes -->
             <div class="tab-content">
