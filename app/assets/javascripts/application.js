@@ -11,9 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require popper
 //= require bootstrap
-
 //= require plugins
 //= require jquery.slick
 //= require footer-reveal
