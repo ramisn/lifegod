@@ -14,8 +14,8 @@
         <!-- /.panel-heading -->
         <div class="panel-body" id="collection">
                 <h1 class="btn btn-outline btn-primary" style="margin-left: 500px;font-size: 20px">Collections</h1>
-                <%= link_to 'New Collection', new_collection_path, class: "btn btn-outline btn-info", style:"margin-right: 500px;font-size: 20px" %>
-                <%= link_to 'New Expense', new_expense_path, class: "btn btn-outline btn-info", style:"margin-left: -450px;font-size: 20px" %>
+                <%= link_to 'New Collection', new_collection_path, class: "btn btn-outline btn-info", style:"margin-right: 500px;font-size: 20px" %><br><br>
+                <%= link_to 'New Expense', new_expense_path, class: "btn btn-outline btn-info", style:"margin-left: 7px;font-size: 20px" %>
                 <table  id="collection" class="table">
                   <thead class="thead-dark">
                     <tr>
@@ -36,15 +36,17 @@
                         <td><%= collection.location %></td>
                         <td><%= collection.name %></td>
                         <td><%= number_with_precision(collection.amount, precision: 2) %></td>
-                        <td><%= collection.collection_type %></td>
+                        <% if collection.collection_type == '1' %>
+                        <td><%= "Family" %></td>
+                        <% elsif collection.collection_type == '2' %>
+                        <td><%= "Donation" %></td>
+                        <% end %>
                         </th>
                       </tr>
                     <% end %>
                   </tbody>
                 </table>
-                <%= @collections.group(:collection_type).sum(:amount).to_a %>
-                <%#= puts amt %>
-                <%# end %>
+                <%#= @collections.group(:collection_type).sum(:amount).to_a %>
                 <br>
           
                 

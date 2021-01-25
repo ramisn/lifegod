@@ -31,7 +31,7 @@
                   <tr>
                     <td><%= (construction_expense.created_at).strftime("%d-%m-%Y") %></td>
                     <td><%= construction_expense.material_description %></td>
-                    <td><%= construction_expense.amount %></td>
+                    <td><%= number_with_precision(construction_expense.amount, precision:2) %></td>
                     <td><%= construction_expense.owner %></td>
                   </tr>
                 <% end %>

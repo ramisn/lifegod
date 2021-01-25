@@ -7,16 +7,16 @@ class InvensController < ApplicationController
     @invens = Inven.all
     @collections = Collection.all
     
-    # @collection_without_donations = @collections.where("collection_type !=?", 2)
-    # @total = @collection_without_donations.group(:name).sum(:amount).to_a
-    @total = @collections.group(:name).sum(:amount).to_a
+    @collection_without_donations = @collections.where("collection_type !=?", '2')
+    @total = @collection_without_donations.group(:name).sum(:amount).to_a
+    # @total = @collections.group(:name).sum(:amount).to_a
     
-    # @total_collections = @collection_without_donations.sum(:amount)
-    # @total_by_location =  @collection_without_donations.group(:location).sum(:amount).to_a
-    @total_by_location =  @collections.group(:location).sum(:amount).to_a
+    @total_collections = @collection_without_donations.sum(:amount)
+    @total_by_location =  @collection_without_donations.group(:location).sum(:amount).to_a
+    # @total_by_location =  @collections.group(:location).sum(:amount).to_a
     
     @donations = @collections.group(:collection_type, :name).sum(:amount).to_a
-    # @total_donations = @collections.where("collection_type=?", 2).sum(:amount)
+    @total_donations = @collections.where("collection_type=?", '2').sum(:amount)
     
     @location_count = Location.count
     @family_count = Family.count
