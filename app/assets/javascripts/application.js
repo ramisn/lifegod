@@ -18,6 +18,10 @@
 //= require jquery.slick
 //= require footer-reveal
 //= require active
+//= require jquery
+//= require jquery_ujs
+//= require collections
+//= require jquery.turbolinks
 
 
 

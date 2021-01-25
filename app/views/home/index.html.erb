@@ -1,10 +1,11 @@
 <!-- ***** Header Area Start ***** -->
 <header class="header_area animated">
-<div class="special_description_img log">
-<%#=image_tag("bg-img/special.png", alt: "")%>
-<img src="assets/bg-img/special.png" alt="">
-   
-</div>
+<span class="col-lg-6" style="width: 36%";><img src="<%= image_path('bg-img/logo.jpg')%>" width="200" alt=""></span>
+<span class="navbar-brand">
+<p style="color: #30166b;font-size: 29px";>Sri Veeramathiyamman Thirukovil</p>
+<p style="color: #30166b;font-size: 29px";>Jeder Palayam, Erode</p></span>  
+
+
     <div class="container-fluid">
     
         <div class="row align-items-center">
@@ -13,9 +14,8 @@
                 <div class="menu_area">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <!-- Logo -->
-                        
                         <!-- <a class="navbar-brand" href="#">&#8383;.</a> -->
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button> -->
                         <!-- Menu Area -->
                        
                         <div class="collapse navbar-collapse" id="ca-navbar">
@@ -130,7 +130,7 @@
                     <div class="col-lg-6">
                         <div class="special_description_img">
                         <%#=image_tag("bg-img/special.png", alt: "")%>
-                        <img src="bg-img/special.png" alt="">
+                        <img src="assets/bg-img/special.png" alt="">
                            
                         </div>
                     </div>
@@ -325,23 +325,28 @@
                         <div class="single-shot">
                             
                             <%#=image_tag("scr-img/1.png", alt: "")%>
-                            <img src="scr-img/1.png" alt="">
-                        # </div>
-                        # <div class="single-shot">
-                        #     <%#=image_tag("scr-img/2.png", alt: "")%>
-                        # </div>
-                        # <div class="single-shot">
-                        #     <%#=image_tag("scr-img/3.png", alt: "")%>
-                        # </div>
-                        # <div class="single-shot">
-                        #     <%#=image_tag("scr-img/4.png", alt: "")%>
-                        # </div>
-                        # <div class="single-shot">
-                        #     <%#=image_tag("scr-img/1.png", alt: "")%>
-                        # </div>
-						# <div class="single-shot">
-                        #     <%#=image_tag("scr-img/3.png", alt: "")%>
-                        # </div>
+                            <img src="assets/scr-img/1.png" alt="">
+                        </div>
+                        <div class="single-shot">
+                            <%#=image_tag("scr-img/2.png", alt: "")%>
+                            <img src="assets/scr-img/2.png" alt="">
+                        </div>
+                        <div class="single-shot">
+                            <%#=image_tag("scr-img/3.png", alt: "")%>
+                            <img src="assets/scr-img/3.png" alt="">
+                        </div>
+                        <div class="single-shot">
+                            <%#=image_tag("scr-img/4.png", alt: "")%>
+                            <img src="assets/scr-img/4.png" alt="">
+                        </div>
+                        <div class="single-shot">
+                            <%#=image_tag("scr-img/1.png", alt: "")%>
+                            <img src="assets/scr-img/1.png" alt="">
+                        </div>
+						<div class="single-shot">
+                            <%#=image_tag("scr-img/3.png", alt: "")%>
+                            <img src="assets/scr-img/3.png" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -516,19 +521,23 @@
                 <!-- Client Thumbnail Area -->
                 <div class="col-12 col-md-6 col-lg-5">
                     <div class="slider slider-nav">
-                        # <div class="client-thumbnail">
-                        # <%#=image_tag("client-img/client-1.jpg", alt: "")%>
-                            
-                        # </div>
-                        # <div class="client-thumbnail">
-                        #     <%#=image_tag("client-img/client-2.jpg", alt: "")%>
-                        # </div>
-                        # <div class="client-thumbnail">
-                        #     <%#=image_tag("client-img/client-3.jpg", alt: "")%>
-                        # </div>
-                        # <div class="client-thumbnail">
-                        #     <%#=image_tag("client-img/client-4.jpg", alt: "")%>
-                        # </div>
+                        <div class="client-thumbnail">
+                        <%#=image_tag("assets/images/client-img/client-1.jpg", alt: "")%>
+                        <%#= image_tag("client-1.jpg", alt: "My logo", size: '200x75') %>
+                        <img src="assets/client-img/client-1.jpg" alt="">
+                        </div>
+                        <div class="client-thumbnail">
+                            <%#=image_tag("client-img/client-2.jpg", alt: "")%>
+                            <img src="assets/client-img/client-2.jpg" alt="">
+                        </div>
+                        <div class="client-thumbnail">
+                            <%#=image_tag("client-img/client-3.jpg", alt: "")%>
+                            <img src="assets/client-img/client-3.jpg" alt="">
+                        </div>
+                        <div class="client-thumbnail">
+                            <%#=image_tag("client-img/client-4.jpg", alt: "")%>
+                            <img src="assets/client-img/client-4.jpg" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -573,6 +582,7 @@
                     <div class="single-team-member">
                         <div class="member-image">
                             <%#=image_tag("team-img/team-1.jpg", alt: "")%>
+                            <img src="assets/team-img/team-1.jpg" alt="">
                             <div class="team-hover-effects">
                                 <div class="team-social-icon">
                                     <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -592,6 +602,7 @@
                     <div class="single-team-member">
                         <div class="member-image">
                             <%#=image_tag("team-img/team-2.jpg", alt: "")%>
+                            <img src="assets/team-img/team-2.jpg" alt="">
                             <div class="team-hover-effects">
                                 <div class="team-social-icon">
                                     <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -611,6 +622,7 @@
                     <div class="single-team-member">
                         <div class="member-image">
                             <%#=image_tag("team-img/team-3.jpg", alt: "")%>
+                            <img src="assets/team-img/team-3.jpg" alt="">
                             <div class="team-hover-effects">
                                 <div class="team-social-icon">
                                     <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -631,6 +643,7 @@
                     <div class="single-team-member">
                         <div class="member-image">
                             <%#=image_tag("team-img/team-4.jpg", alt: "")%>
+                            <img src="assets/team-img/team-4.jpg" alt="">
                             <div class="team-hover-effects">
                                 <div class="team-social-icon">
                                     <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
