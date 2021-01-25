@@ -18,9 +18,3 @@
 //= require jquery
 //= require jquery_ujs
 //= require collections
-//= require jquery.turbolinks
-
-
-
-
-
