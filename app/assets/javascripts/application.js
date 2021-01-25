@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-= require popper
+//= require popper
 //= require bootstrap
 
 //= require plugins
