@@ -13,7 +13,6 @@
 //= require jquery
 //= require bootstrap
 //= require plugins
-//= require jquery.slick
 //= require footer-reveal
 //= require active
 //= require jquery
