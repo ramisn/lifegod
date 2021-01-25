@@ -1,0 +1,10 @@
+
+  <%= form_with do %>
+    <%= form_for @collection, url: "/show" do |form| %>
+      <%= form.collection_select :location, @locations, :loc_name, :loc_name, prompt: "Please Select", id: "locations_select" %>
+      <%#= form.collection_select :name, @names, :name, :name, prompt: "Please Select" %>
+      <%= form.collection_select :name, @families, :fam_name, :fam_name, prompt: "Please Select", id: "families_select" %>
+      <%= form.text_field :amount, placeholder: "Enter the Amount" %>
+      <%= form.submit %>
+    <% end %>
+  <% end %>  

@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+<span class="col-lg-6" style="width: 30%";><img src="<%= image_path('bg-img/logo.jpg')%>" width="200" alt=""></span>
+<span class="navbar-brand">
+  <p style="color: #30166b;font-size: 29px";>ஸ்ரீ வீரமாத்தி அம்மன் திருகோவில்</p>
+  <p style="color: #30166b;font-size: 29px";>51, வேலம் பாளையம் கிராமம்</p>
+  <p style="color: #30166b;font-size: 29px";>சேடர் பாளையம், ஈரோடு</p>
+</span>  
+<span class="col-lg-6" style="width: 17%;float:right;"><img src="<%= image_path('bg-img/logo.jpg')%>" width="200" alt=""></span>
+    <div class="col-lg-6" style="width: 100%;">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <!-- Pill Tabs -->
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body" id="collection">
+                <h1 class="btn btn-outline btn-primary" style="margin-left: 500px;font-size: 20px">Collections</h1>
+                <%= link_to 'New Collection', new_collection_path, class: "btn btn-outline btn-info", style:"margin-right: 500px;font-size: 20px" %>
+                <%= link_to 'New Expense', new_expense_path, class: "btn btn-outline btn-info", style:"margin-left: -450px;font-size: 20px" %>
+                <table  id="collection" class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Date</th>
+                      <th scope="col">Location</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col">Collection Type</th>
+                      <th colspan="3"></th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                  <th scope="row">
+                    <% @collections.each do |collection| %>
+                      <tr>
+                      <td><%= (collection.created_at).strftime("%d-%m-%Y") %></td> 
+                        <td><%= collection.location %></td>
+                        <td><%= collection.name %></td>
+                        <td><%= number_with_precision(collection.amount, precision: 2) %></td>
+                        <td><%= collection.collection_type %></td>
+                        </th>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+                <%= @collections.group(:collection_type).sum(:amount).to_a %>
+                <%#= puts amt %>
+                <%# end %>
+                <br>
+          
+                
+          </div>
+        </div><!-- /.panel-body -->
+      </div><!-- /.panel -->
+  </div><!-- /.col-lg-6 -->
+
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $('#collection').DataTable({ responsive: true, ordering: true });
+  </script>  

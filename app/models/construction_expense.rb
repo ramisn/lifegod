@@ -1,0 +1,2 @@
+class ConstructionExpense < ApplicationRecord
+end

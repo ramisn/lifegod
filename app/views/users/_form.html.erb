@@ -1,0 +1,113 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.text_field :password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comments %>
+    <%= form.text_field :comments %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.date_select :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :misc %>
+    <%= form.text_field :misc %>
+  </div>
+
+  <div class="field">
+    <%= form.label :preferences %>
+    <%= form.text_area :preferences %>
+  </div>
+
+  <div class="field">
+    <%= form.label :terms %>
+    <%= form.check_box :terms %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type %>
+    <%= form.text_field :type %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+<h3>Horizontal Form</h3>
+
+<%#= form_with_source do %>
+  <%= bootstrap_form_with model: @user, layout: :horizontal, local: true do |form| %>
+    <%= form.email_field :email, placeholder: "Enter Email", label: "Email address", help: "We'll never share your email with anyone else" %>
+    <%= form.password_field :password, placeholder: "Password" %>
+    <%= form.select :status, [['activated', 1], ['blocked', 2]], prompt: "Please Select" %>
+    <%= form.text_area :misc %>
+    <%= form.check_box :terms, label: "Agree to Terms" %>
+    <%= form.collection_check_boxes :misc, @collection, :id, :name %>
+    <%= form.collection_radio_buttons :misc, @collection, :id, :name %>
+    <%= form.file_field :misc %>
+    <%= form.datetime_select :misc, include_blank: true %>
+
+    <%= form.submit %>
+  <% end %>
+<%# end %>
+
+<h3>With Validation Error</h3>
+
+<%#= form_with_source do %>
+  <%= bootstrap_form_for @user, layout: :horizontal do |form| %>
+    <%= form.alert_message "This is an alert" %>
+    <%= form.error_summary %>
+    <%= form.email_field :email, placeholder: "Enter Email", label: "Email address", help: "We'll never share your email with anyone else" %>
+    <%= form.collection_check_boxes :misc, @collection, :id, :name %>
+    <%= form.submit %>
+  <% end %>
+<%# end %>
+
+<h3>Inline Form</h3>
+
+<%#= form_with_source do %>
+  <%= bootstrap_form_for @user, layout: :inline do |form| %>
+    <%= form.email_field :email, placeholder: "Enter Email", label: "Email address", help: "We'll never share your email with anyone else" %>
+    <%= form.password_field :password, placeholder: "Password" %>
+    <%= form.check_box :terms, label: "Agree to Terms" %>
+    <%= form.collection_check_boxes :misc, @collection, :id, :name %>
+    <%= form.submit %>
+  <% end %>
+<%# end %>
+
+<h3>Simple Action Text Example</h3>
+
+<%#= form_with_source do %>
+  <%= bootstrap_form_for @user, url: "/users" do |form| %>
+    <%= form.email_field :email, placeholder: "Enter Email", label: "Email address", help: "We'll never share your email with anyone else" %>
+    <%= form.password_field :password, placeholder: "Password" %>
+    <%= form.check_box :terms, label: "Agree to Terms" %>
+    <%= form.collection_check_boxes :misc, @collection, :id, :name %>
+    <%= form.rich_text_area(:life_story) if Rails::VERSION::STRING > "6" %>
+    <%= form.submit %>
+  <% end %>
+<%# end %>

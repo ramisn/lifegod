@@ -1,0 +1,31 @@
+<div class="col-lg-6" style="width: 100%;">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+          <!-- Pill Tabs -->
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body" id="collection">
+        <h1 class="btn btn-outline btn-primary" style="margin-right: 500px;font-size: 20px">Expenses Entry</h1>
+        <br><br>
+          <%= bootstrap_form_for @expense, layout: :inline do |form| %>
+            <% if expense.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
+                <ul>
+                <% expense.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <%= form.select :expense_type, @expense_type, prompt: "Please Select" %>
+            <%= form.collection_select :location, @locations, :loc_name, :loc_name, prompt: "Please Select" %>
+            <%= form.text_field :description, placeholder: "Enter the Details" %>
+            <%= form.text_field :amount, placeholder: "Enter the Amount" %>
+            <%= form.text_field :owner, placeholder: "Enter the Owner" %>
+            <%= form.submit %>
+          <% end %>
+        </div>
+      </div><!-- /.panel-body -->
+    </div><!-- /.panel -->
+</div><!-- /.col-lg-6 -->

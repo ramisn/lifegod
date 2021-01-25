@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Material description:</strong>
+  <%= @construction_expense.material_description %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @construction_expense.amount %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @construction_expense.owner %>
+</p>
+
+<%= link_to 'Edit', edit_construction_expense_path(@construction_expense) %> |
+<%= link_to 'Back', construction_expenses_path %>

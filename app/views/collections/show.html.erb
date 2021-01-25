@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cl date:</strong>
+  <%= @collection.cl_date %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @collection.location %>
+</p>
+
+<p>
+  <strong>Tag:</strong>
+  <%= @collection.tag_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @collection.name %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @collection.amount %>
+</p>
+<p>
+  <strong>Amount:</strong>
+  <%#= @collection.group(:name).sum(:amount) %>
+</p>
+
+<p>
+  <strong>Balance:</strong>
+  <%= @collection.balance %>
+</p>
+
+<p>
+  <strong>Fix amount:</strong>
+  <%= @collection.fix_amount %>
+</p>
+
+<%= link_to 'Edit', edit_collection_path(@collection) %> |
+<%= link_to 'Back', collections_path %>

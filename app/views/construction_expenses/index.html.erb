@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+<span class="col-lg-6" style="width: 30%";><img src="<%= image_path('bg-img/logo.jpg')%>" width="200" alt=""></span>
+<span class="navbar-brand">
+  <p style="color: #30166b;font-size: 29px";>ஸ்ரீ வீரமாத்தி அம்மன் திருகோவில்</p>
+  <p style="color: #30166b;font-size: 29px";>51, வேலம் பாளையம் கிராமம்</p>
+  <p style="color: #30166b;font-size: 29px";>சேடர் பாளையம், ஈரோடு</p>
+</span>  
+<span class="col-lg-6" style="width: 17%;float:right;"><img src="<%= image_path('bg-img/logo.jpg')%>" width="200" alt=""></span>
+  <div class="col-lg-6" style="width: 100%;">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <!-- Pill Tabs -->
+      </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body" id="const_expenses">
+            <h1 class="btn btn-outline btn-primary" style="margin-left: 500px;font-size: 20px">Constructional Expenses</h1>
+            <%= link_to 'New Construction Expense', new_construction_expense_path, class: "btn btn-outline btn-info", style:"margin-left:-757px;font-size: 17px" %>
+            <table id="const_expenses" class="table">
+              <thead>
+                <tr>
+                <th>Date</th>  
+                <th>Material description</th>
+                  <th>Amount</th>
+                  <th>Owner</th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <% @construction_expenses.each do |construction_expense| %>
+                  <tr>
+                    <td><%= (construction_expense.created_at).strftime("%d-%m-%Y") %></td>
+                    <td><%= construction_expense.material_description %></td>
+                    <td><%= construction_expense.amount %></td>
+                    <td><%= construction_expense.owner %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+
+            <br>
+            </div>
+            </div><!-- /.panel-body -->
+          </div><!-- /.panel -->
+      </div><!-- /.col-lg-6 -->
+    
+      <script type="text/javascript">
+      $(document).ready(function() {
+        $('#const_expenses').DataTable({ responsive: true, ordering: true });
+      </script>
