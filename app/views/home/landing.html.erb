@@ -1,0 +1,23 @@
+<span class="col-lg-6" style="width: 30%";><img src="<%= image_path('bg-img/logo.jpg')%>" width="180" alt=""></span><br><br>
+<span>
+  <p style="color: #30166b;font-size: 22px;text-align: center;"">ஸ்ரீ வீரமாத்தி அம்மன் திருகோவில்</p><br>
+  <p style="color: #30166b;font-size: 22px;text-align: center;">51, வேலம் பாளையம் கிராமம்</p><br>
+  <p style="color: #30166b;font-size: 22px;text-align: center;";>சேடர் பாளையம், ஈரோடு</p><br>
+</span>  
+<!-- <span class="col-lg-6" style="width: 17%;float:right;"><img src="<%= image_path('bg-img/logo.jpg')%>" width="200" alt=""></span> -->
+    <div class="col-lg-6" style="width: 100%;">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <!-- Pill Tabs -->
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body" id="collection">
+                <h1 class="btn btn-outline btn-primary" style="margin-left: 140px;font-size: 20px">Home</h1><br><br>
+                <%= link_to 'Collection', new_collection_path, class: "btn btn-outline btn-success", style:"margin-left: 20px;font-size: 20px;color: #f1e5e5;" %><br><br>
+								<%= link_to 'Expenses', new_expense_path, class: "btn btn-outline btn-info", style:"margin-left: 20px;font-size: 20px;color: #f1e5e5;" %><br><br>
+								<%= link_to 'Construction Expense', new_construction_expense_path, class: "btn btn-outline btn-primary", style:"margin-left: 20px;font-size: 20px;color: #f1e5e5;" %><br><br>
+								<%= link_to 'Dashboard', invens_path, class: "btn btn-outline btn-success", style:"margin-left: 20px;font-size: 20px;color: #f1e5e5;" %>
+            
+      	</div><!-- /.panel-body -->
+    	</div><!-- /.panel -->
+    </div><!-- /.col-lg-6 -->

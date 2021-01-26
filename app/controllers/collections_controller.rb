@@ -4,7 +4,7 @@ class CollectionsController < ApplicationController
   # GET /collections
   # GET /collections.json
   def index
-    @collections = Collection.all
+    @collections = Collection.all.order("created_at DESC")
     @total = @collections.sum(:amount)
     @balance = (10000 - @total)
   end
@@ -76,7 +76,7 @@ class CollectionsController < ApplicationController
 
     respond_to do |format|
       if @collection.save
-        format.html { redirect_to collections_url, notice: 'Collection was successfully created.' }
+        format.html { redirect_to landing_path, notice: 'Collection was successfully created.' }
         format.json { render :show, status: :created, location: @collection }
       else
         format.html { render :new }

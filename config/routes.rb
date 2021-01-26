@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   resources :testpages
   # Set Views/Home/index is the main page
   root 'collections#index'
-  get 'home/index', to: 'home#index'
+  get 'index', to: 'home#index'
+  get 'landing', to: 'home#landing'
   # get 'collections/update_families', as: 'update_families'
   # get 'collections/show'
 

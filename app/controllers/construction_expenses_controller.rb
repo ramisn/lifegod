@@ -4,7 +4,7 @@ class ConstructionExpensesController < ApplicationController
   # GET /construction_expenses
   # GET /construction_expenses.json
   def index
-    @construction_expenses = ConstructionExpense.all
+    @construction_expenses = ConstructionExpense.all.order("created_at DESC")
   end
 
   # GET /construction_expenses/1
@@ -28,7 +28,7 @@ class ConstructionExpensesController < ApplicationController
 
     respond_to do |format|
       if @construction_expense.save
-        format.html { redirect_to construction_expenses_url, notice: 'Construction expense was successfully created.' }
+        format.html { redirect_to landing_path, notice: 'Construction expense was successfully created.' }
         format.json { render :show, status: :created, location: @construction_expense }
       else
         format.html { render :new }
