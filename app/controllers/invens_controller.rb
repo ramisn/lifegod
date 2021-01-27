@@ -7,6 +7,8 @@ class InvensController < ApplicationController
     @invens = Inven.all
     @collections = Collection.all
     
+    @locations = Location.all
+    @families = Family.all
     @collection_without_donations = @collections.where("collection_type !=?", '2')
     @total = @collection_without_donations.group(:name).sum(:amount).to_a
     # @total = @collections.group(:name).sum(:amount).to_a
