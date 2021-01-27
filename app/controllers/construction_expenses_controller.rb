@@ -28,7 +28,7 @@ class ConstructionExpensesController < ApplicationController
 
     respond_to do |format|
       if @construction_expense.save
-        format.html { redirect_to landing_path, notice: 'Construction expense was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Construction expense was successfully created.' }
         format.json { render :show, status: :created, location: @construction_expense }
       else
         format.html { render :new }
