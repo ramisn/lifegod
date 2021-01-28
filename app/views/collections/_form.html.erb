@@ -9,13 +9,10 @@
         <br><br>
           <%= bootstrap_form_for @collection, layout: :inline do |form| %>
             <%#= form.text_field :cl_date, label: "Date", placeholder: Time.now.strftime("%d-%m-%Y") %>
-            <%#= form.collection_select :location, @location, :location, :location, prompt: "Please Select" %>
-            <%= form.collection_select :location, @locations, :loc_name, :loc_name, prompt: "Please Select", id: "locations_select" %>
-            <%#= form.collection_select :name, @names, :name, :name, prompt: "Please Select" %>
-            <%= form.collection_select :name, @families, :fam_name, :fam_name, prompt: "Please Select", id: "families_select" %>
+            <%= form.collection_select :location, @locations, :loc_name, :loc_name, prompt: "Please Select Location"  %>
+            <%= form.collection_select :name, @families, :fam_name, :fam_name, prompt: "Please Select Family" %>
             <%= form.text_field :amount, placeholder: "Enter the Amount" %>
             <%= form.select :collection_type, @collection_type, prompt: "Please Select" %>
-            <%#= form.text_field :fix_amount %>
             <%= form.submit %>
           <% end %>
           <%= link_to 'Back', collections_path, class:"btn btn-outline btn-primary" %>

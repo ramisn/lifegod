@@ -2,21 +2,39 @@
 <%= render 'form', collection: @collection %>
 
 
-
-
 <script type="text/javascript">
 
-    $(document).ready(function(){
-    $("#locations_select").change(function(){
-        alert("hello");
-        var location_id = $('#locations_select option:selected').val()
-        $.ajax
-            url: "/collections/update_families"
-            type: "GET"
-            dataType: "script"
-            data: { location_id: location_id}
-            
-        });
-        
+$(document).ready(function() {
+    console.log('rami');
+    $('#collection_location').select2();
+    $('#collection_name').select2();
+});
+
+$("#collection_location").change(function(){
+  	var location_id = $(this).val();
+  	if(location_id == ''){
+  		$("#collection_name").prop("disabled", true);
+  	}else{
+  		$("#collection_name").prop("disabled", false);
+  	}
+  	$.ajax({
+	    url: "new",
+	    method: "GET",  
+	    dataType: "json",
+	    data: {location_id: location_id},
+	    error: function (xhr, status, error) {
+	      	console.error('AJAX Error: ' + status + error);
+	    },
+	    success: function (response) {
+	      	console.log(response);
+	      	var family = response["family"];
+	      	$("#collection_name").empty();
+
+	      	$("#collection_name").append('<option>Please Select Family</option>');
+	      	for(var i = 0; i < family.length; i++){
+	      		$("#collection_name").append('<option value="' + family[i]["fam_name"] + '">' +family[i]["fam_name"] + '</option>');
+	      	}
+	    }
+  	});
 });
 </script> 

@@ -24,17 +24,33 @@ class CollectionsController < ApplicationController
 
     # puts params[:collection][:location] if params[:collection][:location]
     @locations = Location.all
-    @families = Family.all
-    # @families = Family.where("location_id = ?", params[:location_id])
-    # @families = @locations.family
+    if params[:location_id]
+      puts params[:location_id]   
+      loc_id = Location.find_by(loc_name: params[:location_id]).id
+      puts loc_id
+      @families = Family.where("location_id = ?", loc_id)
+      puts @families.inspect
+    else
+      @families = Family.all
+    end
+    if request.xhr?
+      respond_to do |format|
+          format.json {
+              render json: {family: @families}
+          }
+      end
+    end
   end
 
   def update_families
-    # puts location_id
-    # @families = Family.where("location_id = ?", location_id)
-    # respond_to do |f|
-    #   f.js
-    # end
+    puts params[:location_id]
+    loc_id = Location.find_by(loc_name: params[:location_id]).id
+    puts loc_id
+    @families = Family.where("location_id = ?", loc_id)
+    respond_to do |f|
+      f.js
+    end
+
     @collection = Collection.new
     @locations = Location.all
     # # redirect_to new
