@@ -1,5 +1,5 @@
 <% if member_signed_in? %>
-  <li style="float: right;"><%= button_to 'Sign Out', destroy_member_session_path, class: "btn btn-outline btn-success", method: :delete %></li>
+  <li style="float: right;"><i><b><%= current_member.name %></b></i><%= button_to 'Sign Out', destroy_member_session_path, class: "btn btn-outline btn-success", method: :delete %></li>
 <% else %>
   <li><%#= link_to 'Sign in', new_member_session_path %></li>
   <li><%#= link_to 'Sign up', new_member_registration_path %></li>
