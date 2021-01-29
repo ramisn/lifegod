@@ -1,0 +1,42 @@
+<br>
+<span class="col-lg-6" style="width: 30%";><img src="<%= image_path('bg-img/logo.jpg')%>" width="180" alt=""></span><br><br>
+<span>
+  <p style="color: #30166b;font-size: 22px;text-align: center;"">ஸ்ரீ வீரமாத்தி அம்மன் திருகோவில்</p><br>
+  <p style="color: #30166b;font-size: 22px;text-align: center;">51, வேலம் பாளையம் கிராமம்</p><br>
+  <p style="color: #30166b;font-size: 22px;text-align: center;";>சேடர் பாளையம், ஈரோடு</p><br>
+</span>  
+<!-- <span class="col-lg-6" style="width: 17%;float:right;"><img src="<%= image_path('bg-img/logo.jpg')%>" width="200" alt=""></span> -->
+    <div class="col-lg-6" style="width: 100%;">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <!-- Pill Tabs -->
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body" id="collection">
+        <h2>Log In</h2>
+        <div class="authform">
+        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="form-group">
+            <%= f.label :email %>
+            <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password %>
+            <%= f.password_field :password, class: 'form-control' %>
+          </div>
+          <% if devise_mapping.rememberable? -%>
+            <div class="checkbox">
+              <label>
+                <%= f.check_box :remember_me %> Remember me
+              </label>
+            </div>
+          <% end -%>
+          <%= f.submit 'Sign in', :class => 'btn btn-lg btn-success btn-block' %>
+      
+        <% end %>
+      </div>      
+				</div><!-- /.panel-body -->
+				<%#= render 'nav_links_for_auth' %>
+    	</div><!-- /.panel -->
+    </div><!-- /.col-lg-6 -->

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :members
+  # devise_for :users
   resources :construction_expenses
   resources :expenses
   resources :invens
